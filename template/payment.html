@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment Form</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link rel="stylesheet" href="./style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<!-- <link
+href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bree+Serif&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+rel="stylesheet"> -->
+
+<style>
+/* Global Styles */
+
+/* Reset default browser styles */
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+/* Body styles */
+body {
+font-family: 'Roboto', sans-serif; /* Use Roboto font for better readability */
+background-color: #f7fafc; /* Set a light background color */
+}
+
+/* Container styles */
+.container {
+max-width: 1200px;
+margin: 0 auto;
+padding: 0 20px;
+}
+
+/* Header styles */
+header {
+background-color: #ffffff; /* White background */
+border-bottom: 1px solid #e2e8f0; /* Subtle border */
+}
+
+header .logo {
+display: flex;
+align-items: center;
+text-decoration: none;
+color: #2d3748; /* Dark text color */
+font-weight: bold;
+}
+
+header .logo svg {
+width: 40px;
+height: 40px;
+fill: #ffffff; /* White fill color */
+border-radius: 50%; /* Circular logo */
+margin-right: 10px;
+}
+
+header nav {
+margin-left: auto;
+}
+
+header nav a {
+margin-right: 20px;
+color: #4a5568; /* Gray text color */
+text-decoration: none;
+transition: color 0.3s ease;
+}
+
+header nav a:hover {
+color: #48bb78; /* Green on hover */
+}
+
+/* Payment Form styles */
+.payment-form {
+max-width: 600px;
+margin: 95px auto;
+padding: 30px;
+background-color: #ffffff;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
+border-radius: 8px;
+}
+
+.payment-form h2 {
+margin-bottom: 20px;
+font-size: 24px;
+color: #2d3748;
+}
+
+.payment-form input[type='text'] {
+width: 100%;
+margin-bottom: 20px;
+padding: 10px;
+border: 1px solid #cbd5e0;
+border-radius: 4px;
+background-color: #f7fafc;
+}
+
+.payment-form button[type='submit'] {
+width: 100%;
+padding: 12px 0;
+border: none;
+border-radius: 4px;
+background-color: #48bb78;
+color: #ffffff;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.payment-form button[type='submit']:hover {
+background-color: #38a169; /* Darker green on hover */
+}
+
+/* Footer styles */
+footer {
+background-color: #2d3748;
+color: #ffffff;
+text-align: center;
+padding: 20px 0;
+}
+
+footer p {
+margin-bottom: 10px;
+}
+
+footer a {
+color: #ffffff;
+text-decoration: none;
+font-weight: bold;
+}
+
+footer a:hover {
+text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+<div class="w-full sticky top-0 z-50 bg-white ">
+<header class="text-gray-900 font-semibold border-b w-full bg-white shadow-sm ">
+<div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+<a href="/" class="flex font-medium items-center text-gray-900 mb-4 md:mb-0">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+stroke-linejoin="round" stroke-width="2"
+class="w-10 h-10 text-white p-2 bg-green-600 rounded-full" viewBox="0 0 24 24">
+<path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+</svg>
+<span class="ml-3 text-xl">LOGO</span>
+</a>
+<nav class="md:ml-auto flex flex-wrap items-center font-normal justify-center">
+<a href="/" class="mr-5 hover:text-green-600 cursor-pointer">Home</a>
+<a href="/pricing" class="mr-5 hover:text-green-600 cursor-pointer">Pricing</a>
+<a href="/dashboard" class="mr-5 hover:text-green-600 cursor-pointer">Dashboard</a>
+</nav>
+<button
+class="inline-flex items-center bg-green-600 border-0 py-2 px-3 focus:outline-none hover:bg-green-700 rounded text-white mt-4 md:mt-0">
+<a href="/signup">
+Sign
+up
+</a>
+</button>
+</div>
+</header>
+</div>
+
+
+<div class="payment-form">
+<h2>Payment Form</h2>
+<form id="payment-form">
+{% csrf_token %}
+<input type="text" id="cardholder-name" placeholder="Cardholder Name" required>
+<input type="text" id="card-number" placeholder="Card Number" required>
+<input type="text" id="expiry-date" placeholder="Expiry Date (MM/YY)" required>
+<input type="text" id="cvc" placeholder="CVC" required>
+<button type="submit" id="submit-payment">Submit Payment</button>
+</form>
+<div class="payment-card-logos">
+<!-- Payment card logos here -->
+</div>
+</div>
+
+
+
+<script src="https://js.stripe.com/v3/"></script>
+<script>
+// Initialize Stripe.js with your publishable key
+var stripe = Stripe('YOUR_STRIPE_PUBLIC_KEY');
+
+// Create an instance of Elements
+var elements = stripe.elements();
+
+// Create an instance of the card Element
+var card = elements.create('card');
+
+// Add an instance of the card Element into the `card-element` div
+card.mount('#card-element');
+
+// Handle form submission
+var form = document.getElementById('payment-form');
+form.addEventListener('submit', function(event) {
+event.preventDefault();
+
+stripe.createToken(card).then(function(result) {
+if (result.error) {
+// Inform the user if there was an error
+console.error(result.error.message);
+} else {
+// Send the token to your server
+stripeTokenHandler(result.token);
+}
+});
+});
+
+// Submit the token to your server
+function stripeTokenHandler(token) {
+// Insert the token ID into the form so it gets submitted to the server
+var form = document.getElementById('payment-form');
+var hiddenInput = document.createElement('input');
+hiddenInput.setAttribute('type', 'hidden');
+hiddenInput.setAttribute('name', 'stripeToken');
+hiddenInput.setAttribute('value', token.id);
+form.appendChild(hiddenInput);
+
+// Submit the form
+form.submit();
+}
+</script>
+
+{% include 'footer.html' %}
+</body>
+</html>

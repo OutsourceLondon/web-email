@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Asap+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Bree+Serif&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>Priceing</title>
+</head>
+
+<body style="background-color: #f8f9fa; font-family: 'Roboto',sans-serif; ">
+
+
+    <div class="w-full sticky top-0  bg-white ">
+      <header class="text-gray-900 font-semibold border-b  w-full bg-white  shadow-sm ">
+        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a href="/"  class="flex  font-medium items-center text-gray-900 mb-4 md:mb-0">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                    stroke-linejoin="round" stroke-width="2"
+                    class="w-10 h-10 text-white p-2 bg-green-600 rounded-full" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                </svg>
+                <span class="ml-3 text-xl">LOGO</span>
+            </a>
+            <nav class="md:ml-auto flex flex-wrap items-center font-normal  justify-center">
+                <a href="/" class="mr-5 hover:text-green-600 cursor-pointer">Home</a>
+                <a href="/pricing" class="mr-5 hover:text-green-600 cursor-pointer">Pricing</a>
+                <a href="/dashboard" class="mr-5 hover:text-green-600 cursor-pointer">Dashboard</a>
+            </nav>
+            <button
+                    class="inline-flex items-center bg-green-600 border-0 py-2 px-3 focus:outline-none hover:bg-green-700 rounded text-white mt-4 md:mt-0">
+                    <a href="/signup">
+                        Sign
+                        up
+                    </a>
+                </button>
+            </button>
+        </div>
+    </header>
+    </div>
+
+
+    <div class="flex justify-center w-full my-10">
+        <div class="grid lg:grid-cols-3 md:grid-cols-2 gap-5  grid-cols-1  ">
+            <div class="border bg-white border-slate-100 w-64 flex flex-col items-center justify-center py-7 gap-2">
+                <div class="flex flex-col items-center justify-center mb-8 border-b-2 w-40 pb-10 mx-10 text-xs gap-1">
+                    <div style="font-size: 14px;">
+                        Ec-250
+                    </div>
+                    <div class="text-4xl my-2">
+                        {{ content.price1 }}
+                    </div>
+                    <div class="my-2">
+                        .99 / month
+                    </div>
+                    <div class="my-2">
+                        Specs:
+                    </div>
+                    <div class="border-b border-black">
+                        250 GB storage
+                    </div>
+                    <div class="border-b border-black border-dotted" style="font-size: 10px;">
+                        4x replicated
+                    </div>
+                    <div>
+                        1 CPU
+                    </div>
+                    <div>
+                        2 GB RAM
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-center mb-8 border-b-2 w-40 pb-10 mx-10 text-xs gap-1">
+                    <div class="mb-3">
+                        Usage:
+                    </div>
+                    <div>
+                        Unlimited domains
+                    </div>
+                    <div>
+                        Unlimited users
+                    </div>
+                    <div class="border-b border-black">
+                        ≈ 100 concurrent users
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center justify-center w-40 mb-3 mx-10 text-xs gap-1">
+                    <div class="mb-3">
+                        Locations:
+                    </div>
+                    <div>
+                        Australia
+                    </div>
+                    <div>
+                        Canada
+                    </div>
+                    <div>
+                        France
+                    </div>
+                    <div>
+                        Germany
+                    </div>
+                    <div>
+                        Poland
+                    </div>
+                    <div>
+                        Singapore
+                    </div>
+                    <div>
+                        United Kingdom
+                    </div>
+                    <div>
+                        United States (east)
+                    </div>
+                    <div>
+                        United States (west)
+                    </div>
+                </div>
+
+
+                <div>
+                   <a href="process_payment"><button class="bg-green-600 text-white font-semibold text-sm px-4 py-2 rounded-sm">Checkout
+                        now</button></a>
+                </div>
+
+
+            </div>
+
+
+            <div class="border bg-white border-slate-100 w-64 flex flex-col items-center justify-center py-7 gap-2">
+                <div class="flex flex-col items-center justify-center mb-8 border-b-2 w-40 pb-10 mx-10 text-xs gap-1">
+                    <div style="font-size: 14px;">
+                        Ec-250
+                    </div>
+                    <div class="text-4xl my-2 ">
+                        {{ content.price2 }}
+                    </div>
+                    <div class="my-2">
+                        .99 / month
+                    </div>
+                    <div class="my-2">
+                        Specs:
+                    </div>
+                    <div class="border-b border-black">
+                        250 GB storage
+                    </div>
+                    <div class="border-b border-black border-dotted" style="font-size: 10px;">
+                        4x replicated
+                    </div>
+                    <div>
+                        1 CPU
+                    </div>
+                    <div>
+                        2 GB RAM
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-center mb-8 border-b-2 w-40 pb-10 mx-10 text-xs gap-1">
+                    <div class="mb-3">
+                        Usage:
+                    </div>
+                    <div>
+                        Unlimited domains
+                    </div>
+                    <div>
+                        Unlimited users
+                    </div>
+                    <div class="border-b border-black">
+                        ≈ 100 concurrent users
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center justify-center w-40 mb-3 mx-10 text-xs gap-1">
+                    <div class="mb-3">
+                        Locations:
+                    </div>
+                    <div>
+                        Australia
+                    </div>
+                    <div>
+                        Canada
+                    </div>
+                    <div>
+                        France
+                    </div>
+                    <div>
+                        Germany
+                    </div>
+                    <div>
+                        Poland
+                    </div>
+                    <div>
+                        Singapore
+                    </div>
+                    <div>
+                        United Kingdom
+                    </div>
+                    <div>
+                        United States (east)
+                    </div>
+                    <div>
+                        United States (west)
+                    </div>
+                </div>
+
+
+                <div>
+                    <a href="process_payment"><button class="bg-green-600 text-white font-semibold text-sm px-4 py-2 rounded-sm">Checkout
+                        now</button></a>
+                </div>
+
+
+            </div>
+
+
+
+
+            <div class="border bg-white border-slate-100 w-64 flex flex-col items-center justify-center py-7 gap-2">
+                <div class="flex flex-col items-center justify-center mb-8 border-b-2 w-40 pb-10 mx-10 text-xs gap-1">
+                    <div style="font-size: 14px;">
+                        Ec-250
+                    </div>
+                    <div class="text-4xl my-2">
+                        {{ content.price3 }}
+                    </div>
+                    <div class="my-2">
+                        .99 / month
+                    </div>
+                    <div class="my-2">
+                        Specs:
+                    </div>
+                    <div class="border-b border-black">
+                        250 GB storage
+                    </div>
+                    <div class="border-b border-black border-dotted" style="font-size: 10px;">
+                        4x replicated
+                    </div>
+                    <div>
+                        1 CPU
+                    </div>
+                    <div>
+                        2 GB RAM
+                    </div>
+                </div>
+                <div class="flex flex-col items-center justify-center mb-8 border-b-2 w-40 pb-10 mx-10 text-xs gap-1">
+                    <div class="mb-3">
+                        Usage:
+                    </div>
+                    <div>
+                        Unlimited domains
+                    </div>
+                    <div>
+                        Unlimited users
+                    </div>
+                    <div class="border-b border-black">
+                        ≈ 100 concurrent users
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center justify-center w-40 mb-3 mx-10 text-xs gap-1">
+                    <div class="mb-3">
+                        Locations:
+                    </div>
+                    <div>
+                        Australia
+                    </div>
+                    <div>
+                        Canada
+                    </div>
+                    <div>
+                        France
+                    </div>
+                    <div>
+                        Germany
+                    </div>
+                    <div>
+                        Poland
+                    </div>
+                    <div>
+                        Singapore
+                    </div>
+                    <div>
+                        United Kingdom
+                    </div>
+                    <div>
+                        United States (east)
+                    </div>
+                    <div>
+                        United States (west)
+                    </div>
+                </div>
+
+
+                <div>
+                    <a href="process_payment"><button class="bg-green-600 text-white font-semibold text-sm px-4 py-2 rounded-sm">Checkout
+                        now</button></a>
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="flex justify-center my-10 items-center">
+        <div class="shadow-sm">
+            <img src="./images//image1.PNG" alt="">
+
+        </div>
+    </div>
+
+    {% include 'footer.html' %}
+</body>
+
+</html>
