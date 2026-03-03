@@ -28,7 +28,11 @@ DEBUG = True
 
 # ALLOWED_HOSTS = ['thethundermail.co.uk']
 # ALLOWED_HOSTS = []
-ALLOWED_HOSTS = ['thethundermail.co.uk']
+ALLOWED_HOSTS = [
+    "web-email.onrender.com",
+    "thethundermail.co.uk",
+    "www.thethundermail.co.uk",
+]
 
 
 # Application definition
